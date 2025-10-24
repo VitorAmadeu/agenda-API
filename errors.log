@@ -1,0 +1,1 @@
+2025-10-04T20:18:32.853Z - ERRO: Falha ao inserir usuário bia.souza@example.com: E11000 duplicate key error collection: agenda_db.usuarios index: email_1 dup key: { email: "bia.souza@example.com" }
