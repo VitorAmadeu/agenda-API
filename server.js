@@ -70,7 +70,7 @@ app.post('/registrar', async (req, res) => {
     await novoUsuario.salvar();
     res.status(201).json({ message: 'Usuário registrado com sucesso!' });
   } catch (error) {
-    // Trata o erro de e-mail duplicado que configuramos no Projeto 1
+    // Trata o erro de e-mail duplicado que tem no projeto 1
     if (error.code === 11000) {
       return res.status(409).json({ error: 'Este e-mail já está em uso.' });
     }
@@ -165,9 +165,6 @@ app.post('/eventos', checkAuth, async (req, res) => {
     return res.status(400).json({ error: 'Título, data de início e ID da agenda são obrigatórios.' });
   }
 
-  // (Opcional, mas boa prática: verificar se a agenda pertence ao usuário logado)
-  // (Vamos manter simples por enquanto e focar nos requisitos)
-
   try {
     const novoEvento = new Evento(titulo, data_inicio, id_agenda);
     await novoEvento.salvar();
@@ -254,7 +251,7 @@ app.delete('/eventos/:id', checkAuth, async (req, res) => {
       return res.status(403).json({ error: 'Acesso negado. Você não é o dono deste evento.' });
     }
 
-    // 2. Se tudo estiver certo, deleta o evento
+    // 2.deleta o evento
     const eventoParaDeletar = new Evento(evento.titulo, evento.data_inicio, evento.id_agenda, evento._id);
     await eventoParaDeletar.deletar();
 
@@ -271,7 +268,7 @@ app.post('/logout', (req, res) => {
       return res.status(500).json({ error: 'Falha ao fazer logout.' });
     }
     // Limpa o cookie do cliente
-    res.clearCookie('connect.sid'); // 'connect.sid' é o nome padrão da cookie de sessão
+    res.clearCookie('connect.sid'); 
     res.status(200).json({ message: 'Logout bem-sucedido.' });
   });
 });

@@ -28,7 +28,7 @@ class Usuario {
       const result = await collection.insertOne({
         nome: this.nome,
         email: this.email,
-        senha: senhaHash, // NOVO: Salva a senha hasheada
+        senha: senhaHash, 
         criado_em: new Date(),
       });
 
@@ -43,7 +43,6 @@ class Usuario {
   }
 
   static async buscarPorEmail(email) {
-    // ... (este método continua igual) ...
     if (!email) {
       throw new Error('O e-mail é obrigatório para a busca.');
     }
