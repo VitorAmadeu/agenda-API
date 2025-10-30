@@ -1,20 +1,20 @@
 # API de Agenda Eletrônica (Projeto 2)
 
-[cite_start]Este projeto é uma API RESTful completa para um sistema de agenda eletrônica, desenvolvida para a disciplina de Programação Web Back-End[cite: 39, 42].
+Este projeto é uma API RESTful completa para um sistema de agenda eletrônica, desenvolvida para a disciplina de Programação Web Back-End.
 
-[cite_start]A aplicação utiliza as classes de acesso a dados (Models) do Projeto 1 e constrói sobre elas um servidor web com Express.js[cite: 42]. [cite_start]O sistema implementa uma rotina de autenticação segura com senhas criptografadas, gerenciamento de sessão e endpoints protegidos para criar e gerenciar agendas e eventos[cite: 44, 52]. [cite_start]Todas as respostas são fornecidas no formato JSON[cite: 45].
+A aplicação utiliza as classes de acesso a dados (Models) do Projeto 1 e constrói sobre elas um servidor web com Express.js. O sistema implementa uma rotina de autenticação segura com senhas criptografadas, gerenciamento de sessão e endpoints protegidos para criar e gerenciar agendas e eventos. Todas as respostas são fornecidas no formato JSON.
 
 ## Tecnologias Utilizadas
 
 * **Node.js**
-* [cite_start]**Express.js:** Gerenciamento do servidor e das rotas (endpoints)[cite: 42].
+* **Express.js:** Gerenciamento do servidor e das rotas (endpoints).
 * **MongoDB:** Banco de dados NoSQL.
-* [cite_start]**express-session:** Gerenciamento de sessões de usuário para autenticação[cite: 44].
+* **express-session:** Gerenciamento de sessões de usuário para autenticação.
 * **bcrypt:** Criptografia (hash) de senhas para armazenamento seguro.
 
 ## Funcionalidades Implementadas
 
-* [cite_start]**Rotina de Login:** Implementação de `POST /registrar` e `POST /login`[cite: 52].
+* **Rotina de Login:** Implementação de `POST /registrar` e `POST /login`.
 * **Autenticação Segura:** Senhas são salvas no banco usando hash `bcrypt`.
 * **Uso de Sessões:** Rotas de "Agendas" e "Eventos" são protegidas e só podem ser acessadas por usuários logados (autenticados).
 * **Implementação dos Casos de Uso:** Endpoints para Criar, Listar e Deletar Agendas e Eventos.
